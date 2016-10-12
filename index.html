@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+
+    <body ng-controller="AppCtrl">
+        <div class="container">          
+          <title></title>
+          <content></content>
+          <add-buttons></add-buttons>
+        </div>
+<!-- /.container -->
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+    <script src="app.js"></script>
+    <script src="components/title/index.js"></script>
+    <script src="components/content/index.js"></script>
+    <script src="components/content/controller.js"></script>
+    <script src="components/buttons/index.js"></script>
+    <script src="components/buttons/controller.js"></script>
+    <script src="services/productsService.js"></script>
+    <script src="services/blockService.js"></script>
+</html>
