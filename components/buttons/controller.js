@@ -1,20 +1,10 @@
-myApp.controller('ButtonCtrl', function($scope, blockService){
+myApp.controller('ButtonCtrl', function($scope, modalService, $uibModal){
+	
 	$scope.addTextBlock = function() {
-		var block = {
-				type: 'text',
-				title: 'my title',
-				body: 'this is body'
-			};
-
-		blockService.addBlock(block);
+		modalService.open('text');
 	}
 
 	$scope.addProdBlock = function() {
-		var block = {
-				type: 'products',
-				products: [167687, 168012]
-			};
-
-		blockService.addBlock(block);
+		modalService.open('products');
 	}
 });
