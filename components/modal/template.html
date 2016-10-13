@@ -1,8 +1,16 @@
 <div class="modal-header">
-	<h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+	<h3 class="modal-title" id="modal-title">Insert your content</h3>
 </div>
 <div class="modal-body" id="modal-body">
-<form>
+
+<div class="row">
+    <div class="col-md-4 text-center" ng-repeat="p in prods track by $index" ng-click="select(p)">
+        <img ng-src="{{p.image}}" style="width:100px;">
+    </div>
+  </div>
+
+<!-- TEXT BLOCK FORM-->
+<form ng-show="type === 'text'">
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" ng-model="info.title" id="title" placeholder="Title...">
@@ -14,6 +22,8 @@
 </form>
 	
 </div>
+
+<!-- MODAL FOOTER -->
 <div class="modal-footer">
 	<button class="btn btn-primary" ng-disabled="!isValidBlock()" type="button" ng-click="save()">Save</button>
   <button class="btn btn-danger" ng-disabled="!isEdit()" type="button" ng-click="delete()">Delete</button>

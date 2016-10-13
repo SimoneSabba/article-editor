@@ -28,9 +28,42 @@ myApp.service('productsService', function($http){
 		"retailer": "French Connection",
 		"image": "https://static.grabble.com/products/168013/c1385ee4ba25e9c67cbade7071a9670c.jpg"
 	}];
+
+	var selectedProd = [];
 	
 	this.getProducts = function() {
 		return products;
+	}
+
+	this.getSelectedProds = function() {
+		return selectedProd;
+	}
+
+	this.select = function(prod) {
+		var index = this.isSelected(prod);
+		if (index === -1) {
+			this.add(prod.id);
+		} else {
+			this.remove(index)
+		}
+
+		console.log(selectedProd);
+	}
+
+	this.remove = function(index) {
+		selectedProd.splice(index,1);
+	}
+
+	this.add = function(id) {
+		selectedProd.push(id);
+	}
+
+	this.isSelected = function(prod) {
+		return _.indexOf(selectedProd, prod.id);
+	}
+
+	this.initSelected = function() {
+		selectedProd = [];
 	}
 	return this;
 

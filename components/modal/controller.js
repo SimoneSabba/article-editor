@@ -1,8 +1,19 @@
-myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, operation, blockService){
+myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, operation, blockService, productsService){
 
 	$scope.info = info;
+	$scope.type = type;
 
-	function isNew() {
+	if(blockService.isProdBlock(type)) {
+		$scope.prods = productsService.getProducts();
+		$scope.info.products = info.prods ? info.prods : [];
+	}
+
+	$scope.select = function(prod) {
+		productsService.select(prod);
+		$scope.info.products = productsService.getSelectedProds();
+	}
+
+	$scope.isNew = function() {
 		return operation === 'new';
 	}
 
@@ -15,7 +26,7 @@ myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, op
 	}
 
 	$scope.save = function () {
-		if (isNew()) {
+		if ($scope.isNew()) {
 			blockService.addBlock(type, $scope.info);
 		} else if ($scope.isEdit()) {
 			blockService.editBlock($scope.info);
