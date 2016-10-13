@@ -1,4 +1,4 @@
-myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, blockService){
+myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, operation, blockService){
 
 	$scope.info = {};
 
