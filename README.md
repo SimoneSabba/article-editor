@@ -9,3 +9,9 @@ If you don't have a local server yet, follow these instructions
 2) run ```http-server```
 
 3) Open your favourite browser and go to http://localhost:8080 to display the demo
+
+## Resources used 
+- [AngularJS 1.x](https://angularjs.org/)
+- [Bootstrap](http://getbootstrap.com/)
+- [Bootstrap-UI](https://angular-ui.github.io/bootstrap/)
+- [Lodash](https://lodash.com/)
