@@ -47,7 +47,6 @@ myApp.service('productsService', function($http){
 			this.remove(index)
 		}
 
-		console.log(selectedProd);
 	}
 
 	this.remove = function(index) {
