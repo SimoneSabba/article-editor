@@ -1,4 +1,4 @@
-myApp.controller('ButtonCtrl', function($scope, modalService, $uibModal){
+myApp.controller('ButtonCtrl', function($scope, modalService){
 	
 	$scope.addTextBlock = function() {
 		modalService.open('text');
