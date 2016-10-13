@@ -1,22 +1,26 @@
 <div>
 <div ng-repeat = "b in blocks track by $index" ng-show="!JSONview">
-	<div class="well block" ng-click="edit(b)">
-		<p class="lead text-muted">
-		<pre>
-		{ 	"id": {{b.id}},
-	    	"type": {{b.type}},
-		    "title": {{b.title}},
-		    "body": {{b.body}},
-		    "products": {{b.products}}
-		}
-			</pre>
-		</p>
+	<div class="block" ng-click="edit(b)">
+		
+		<pre ng-show="b.type === 'products'">
+			{ 
+			    "type": {{b.type}},
+			    "products": {{b.products}}
+			}
+		</pre>
+		<pre ng-show="b.type === 'text'">
+			{ 
+			    "type": "text",
+			    "title": {{b.title}},
+			    "body": {{b.body}},
+			}
+		</pre>
+		
 		
 	</div>	
 </div>
 
 <div ng-show="JSONview">
 	<pre>{{toJSON()}}</pre>
-	
 </div>
 </div>
