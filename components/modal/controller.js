@@ -1,11 +1,21 @@
-myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, blockService){
+myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, blockService){
+
+	$scope.info = {};
 
 	$scope.save = function () {
-		blockService.addBlock(type, $scope.info);
-    	$uibModalInstance.close();
+		if (blockService.isValidBlock($scope.info)) {
+			blockService.addBlock(type, $scope.info);
+			$uibModalInstance.close();
+		}
+		
   	};
 
-	$scope.cancel = function () {
-		$uibModalInstance.dismiss('cancel');
+  	$scope.delete = function() {
+  		$uibModalInstance.close();
+  	}
+
+	$scope.close = function () {
+		$scope.info = info;
+		$uibModalInstance.close();
 	};
 });
