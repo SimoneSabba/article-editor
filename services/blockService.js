@@ -1,4 +1,4 @@
-myApp.service('blockService', function($http){
+myApp.service('blockService', function(productsService){
 	
 	var 
 		blocks = [],
@@ -19,9 +19,10 @@ myApp.service('blockService', function($http){
 		blockToAdd = {};
 		blockToAdd.id = index;
 		blockToAdd.type = 'products';
-		blockToAdd.products = [167687, 168012];
+		blockToAdd.products = info.products;
 		blocks.push(blockToAdd);
 		index++;
+		productsService.initSelected();
 	}
 
 	this.addBlock = function(type, info) {
@@ -58,7 +59,7 @@ myApp.service('blockService', function($http){
 	}
 
 	this.isValidBlock = function(info) {
-		return info.title && info.body ;
+		return info.title && info.body || info.products && info.products.length>0;
 	}
 	return this;
 
