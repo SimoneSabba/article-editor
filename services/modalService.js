@@ -6,7 +6,7 @@ myApp.service('modalService', function($uibModal, blockService, productsService)
 		resolve: {}
 	};
 
-	function addResolveInfo() {
+	function addResolveInfo(info) {
 		options.resolve.info = function() {
 			return info;
 		}
@@ -18,8 +18,9 @@ myApp.service('modalService', function($uibModal, blockService, productsService)
 		}
 	}
 
-	this.open = function(type) {
+	this.open = function(type, info) {
 		addResolveType(type);
+		addResolveInfo(info);
 		$uibModal.open(options);
 	}
 	return this;
