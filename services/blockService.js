@@ -7,19 +7,21 @@ myApp.service('blockService', function($http){
 
 	this.addTextBlock = function(info) {
 		blockToAdd = {};
+		blockToAdd.id = index;
 		blockToAdd.type = 'text';
 		blockToAdd.title = info.title;
 		blockToAdd.body = info.body;
-		
 		blocks.push(blockToAdd);
+		index++;
 	}
 
 	this.addProdBlock = function(info) {
 		blockToAdd = {};
+		blockToAdd.id = index;
 		blockToAdd.type = 'products';
 		blockToAdd.products = [167687, 168012];
-
 		blocks.push(blockToAdd);
+		index++;
 	}
 
 	this.addBlock = function(type, info) {
