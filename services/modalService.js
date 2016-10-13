@@ -8,7 +8,7 @@ myApp.service('modalService', function($uibModal, blockService, productsService)
 
 	function addResolveInfo(info) {
 		options.resolve.info = function() {
-			return info;
+			return angular.copy(info);
 		}
 	}
 

@@ -15,7 +15,7 @@
 	
 </div>
 <div class="modal-footer">
-	<button class="btn btn-primary" type="button" ng-click="save()">Save</button>
-  <button class="btn btn-danger" type="button" ng-click="delete()">Delete</button>
+	<button class="btn btn-primary" ng-disabled="!isValidBlock()" type="button" ng-click="save()">Save</button>
+  <button class="btn btn-danger" ng-disabled="!isEdit()" type="button" ng-click="delete()">Delete</button>
 	<button class="btn btn-warning" type="button" ng-click="close()">Close</button>
 </div>

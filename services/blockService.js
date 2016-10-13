@@ -32,8 +32,17 @@ myApp.service('blockService', function($http){
 		}
 	}
 
-	this.removeBlock = function() {
+	this.removeBlock = function(id) {
+		_.remove(this.getBlocks(), function(el) {
+				  	return el.id === id;
+				});
+	}
 
+	this.editBlock = function(block) {
+		var blocks = this.getBlocks(),
+			index = _.indexOf(blocks, _.find(blocks, {id: block.id}));
+
+		blocks.splice(index, 1, block);
 	}
 
 	this.getBlocks = function() {
