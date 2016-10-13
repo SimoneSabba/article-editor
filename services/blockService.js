@@ -22,7 +22,7 @@ myApp.service('blockService', function(productsService){
 		blockToAdd.products = info.products;
 		blocks.push(blockToAdd);
 		index++;
-		productsService.initSelected();
+		productsService.initSelected([]);
 	}
 
 	this.addBlock = function(type, info) {

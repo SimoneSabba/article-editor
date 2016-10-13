@@ -5,7 +5,8 @@ myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, op
 
 	if(blockService.isProdBlock(type)) {
 		$scope.prods = productsService.getProducts();
-		$scope.info.products = info.prods ? info.prods : [];
+		$scope.info.products = info.products ? info.products : [];
+		productsService.initSelected($scope.info.products);
 	}
 
 	$scope.isSelected = function(prod) {

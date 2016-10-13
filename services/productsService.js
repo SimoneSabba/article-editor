@@ -61,8 +61,8 @@ myApp.service('productsService', function($http){
 		return _.indexOf(selectedProd, prod.id);
 	}
 
-	this.initSelected = function() {
-		selectedProd = [];
+	this.initSelected = function(arr) {
+		selectedProd = arr;
 	}
 	return this;
 
