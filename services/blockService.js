@@ -61,6 +61,10 @@ myApp.service('blockService', function(productsService){
 	this.isValidBlock = function(info) {
 		return info.title && info.body || info.products && info.products.length>0;
 	}
+
+	this.getBlocksToJSON = function() {
+		return JSON.stringify(blocks, null, 4);
+	}
 	return this;
 
 });
