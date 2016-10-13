@@ -45,6 +45,10 @@ myApp.service('blockService', function($http){
 	this.isProdBlock = function(type) {
 		return type === 'products';
 	}
+
+	this.isValidBlock = function(info) {
+		return info.title && info.body ;
+	}
 	return this;
 
 });
