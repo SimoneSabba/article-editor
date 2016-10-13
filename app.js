@@ -1,6 +1,6 @@
 'use strict';
 
-var myApp = angular.module('app', []);
+var myApp = angular.module('app', ['ui.bootstrap']);
 
 myApp.controller(
 	'AppCtrl', ['$scope', 'productsService', 'blockService', 
