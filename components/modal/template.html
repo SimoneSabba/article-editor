@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-md-4 text-center" ng-repeat="p in prods track by $index" ng-click="select(p)">
-        <img ng-src="{{p.image}}" style="width:100px;">
+        <img ng-class="{ 'selected': isSelected(p) }" ng-src="{{p.image}}" style="width:100px;">
     </div>
   </div>
 

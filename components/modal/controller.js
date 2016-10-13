@@ -8,6 +8,10 @@ myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, op
 		$scope.info.products = info.prods ? info.prods : [];
 	}
 
+	$scope.isSelected = function(prod) {
+		return productsService.isSelected(prod) !== -1;
+	}
+
 	$scope.select = function(prod) {
 		productsService.select(prod);
 		$scope.info.products = productsService.getSelectedProds();
