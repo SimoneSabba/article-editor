@@ -40,30 +40,35 @@ myApp.service('productsService', function($http){
 	}
 
 	this.select = function(prod) {
-		var index = this.isSelected(prod);
-		if (index === -1) {
-			this.add(prod.id);
+		if (!this.isSelected(prod.id)) {
+			this.add(prod);
 		} else {
-			this.remove(index)
+			this.remove(prod)
 		}
-
 	}
 
-	this.remove = function(index) {
-		selectedProd.splice(index,1);
+	this.remove = function(prod) {
+		_.remove(selectedProd, function(p) {
+	  		return p.id === prod.id;
+		});
 	}
 
-	this.add = function(id) {
-		selectedProd.push(id);
+	this.add = function(prod) {
+		selectedProd.push(prod);
 	}
 
-	this.isSelected = function(prod) {
-		return _.indexOf(selectedProd, prod.id);
+	this.isSelected = function(id) {
+		return this.getProductById(selectedProd, id);
 	}
 
 	this.initSelected = function(arr) {
 		selectedProd = arr;
 	}
+
+	this.getProductById = function(arr, id) {
+		return _.find(arr, function(prod) { return prod.id === id; });
+	}
+
 	return this;
 
 });
