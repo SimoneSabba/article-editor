@@ -1,7 +1,6 @@
 myApp.controller('ContentCtrl', function($scope, blockService, modalService){
 	
 	$scope.blocks = blockService.getBlocks();
-
 	$scope.toJSON = function() {
 		return blockService.getBlocksToJSON();
 	}

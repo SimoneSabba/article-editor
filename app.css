@@ -11,3 +11,7 @@
 .block {
 	cursor: pointer;
 }
+
+.modal-body img {
+	width: 100px;
+}

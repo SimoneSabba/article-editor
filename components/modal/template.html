@@ -3,9 +3,10 @@
 </div>
 <div class="modal-body" id="modal-body">
 
+<!-- PRODUCTS BLOCK -->
 <div class="row">
     <div class="col-md-4 prod-block text-center" ng-repeat="p in prods track by $index" ng-click="select(p)">
-        <img ng-class="{ 'selected': isSelected(p) }" ng-src="{{p.image}}" style="width:100px;">
+        <img ng-class="{ 'selected': isSelected(p) }" ng-src="{{p.image}}">
     </div>
   </div>
 

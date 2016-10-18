@@ -10,7 +10,7 @@ myApp.controller('ModalCtrl', function($scope, $uibModalInstance, type, info, op
 	}
 
 	$scope.isSelected = function(prod) {
-		return productsService.isSelected(prod) !== -1;
+		return !_.isUndefined(productsService.isSelected(prod.id));
 	}
 
 	$scope.select = function(prod) {
