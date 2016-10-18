@@ -2,8 +2,7 @@
 <div ng-repeat = "b in blocks track by $index" ng-show="!JSONview">
 	<div class="block" ng-click="edit(b)">
 		<div ng-show="b.type === 'text'">
-			<h1>{{b.title}}</h1>
-			<p class="lead">{{b.body}}</p>
+			<text-block info="b"></text-block>
 		</div>
 		<div ng-show="b.type === 'products'">
 			<prod-block products="b.products"></prod-block>

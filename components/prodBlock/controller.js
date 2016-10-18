@@ -1,4 +1,1 @@
-myApp.controller('ProdBlockCtrl', function($scope, productsService){	
-	
-
-});
+myApp.controller('ProdBlockCtrl', function($scope, productsService){});
