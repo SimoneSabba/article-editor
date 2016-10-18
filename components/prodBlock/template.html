@@ -1,10 +1,9 @@
 <div class="row" >
  	<div ng-repeat="p in products">
- 		
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img style="width:100px;" ng-src="{{p.image}}" alt="{{p.title}}">
-      <div class="caption">
+      <img ng-src="{{p.image}}" alt="{{p.title}}">
+      <div class="caption text-center">
         <h5>{{p.title}}</h5>
         <p>£{{p.price}}</p>
       </div>
